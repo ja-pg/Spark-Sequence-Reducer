@@ -24,10 +24,10 @@ closely related sequences. Stretcher only uses linear space to find the optimal 
 global alignment. The low memory used by the algorithm makes possible the
  alignment in parallel of a larger number of sequences as part of the reduction process.
  
-A precompiled dynamic library (stretcher.so) is provided, but you can compile it manually if needed using gcc:
+A precompiled dynamic library (stretcher.so) is provided, but you can compile it manually if needed using make:
  
 ```
-gcc -I Headers/ -I Sources/ -I pcre/ -o stretcher pcre/*.c Sources/*.c stretcher.c -lm
+make compile
 ```
 
 
@@ -37,9 +37,10 @@ Spark Sequence Reducer wraps Stretcher using ctypes to facilitate calling the pr
 ## Configuration instructions
 * Compile stretcher, the global alignment algorithm (See _Compiling Stretcher_).
 * Download [nucl_gb.accession2taxid.gz](ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/accession2taxid/nucl_gb.accession2taxid.gz),
- [taxdump.tar.gz](ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdump.tar.gz) to the `data/` directory 
+ [taxdump.tar.gz](ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdump.tar.gz),  directory 
 of spark sequence reducer (Either manually or running `ncbitax-download.sh`).
-* Run `configure-gb.sh` to create and configure secondary files using the taxonomy files.
+* Extract `names.dmp` and `nodes.dmp` from `data/taxdump.tar.gz` to `data/` (you can skip this step if you used `ncbitax-download.sh`).
+* Run `make configure` to create and configure secondary files using the taxonomy files.
 * If running on multiple machines, replicate the spark sequence reducer directory to all the nodes in your cluster.
 
 ## Running Spark Sequence Reducer
