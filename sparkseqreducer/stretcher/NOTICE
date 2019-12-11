@@ -1,0 +1,6 @@
+Stretcher has been extracted and modified from EMBOSS-6.6.0.
+This version was modified to work as a standalone alignment algorithm, so it can be
+directly called from other code.
+
+All source code and binaries retain their original licenses (GNU GENERAL PUBLIC LICENSE or University of Cambridge License),
+ and the information about authors and modifications can be found in the heading at the start of each source file.
