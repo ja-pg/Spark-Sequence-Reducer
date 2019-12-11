@@ -1,4 +1,4 @@
-#Spark Sequence Reducer
+# Spark Sequence Reducer
 
 Spark Sequence Reducer is an application designed to reduce the size of whole genome reference 
 sequence databases typically used in sequence analysis tools. Spark Sequence Reducer
